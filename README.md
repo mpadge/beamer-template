@@ -7,6 +7,7 @@ pages within a `beamer` presentation.)
 
 It's all run by `makefile`:
 
-1. First make figures with `$ make figs`
-2. Then just `$ make` to make the whole lot
-3. (Optional) `$ make clean`, `$ make cleanfigs`, or `$make cleanall`
+1. First open all files in `tmux` with `bash tmux-start.bash`
+2. Then make figures with `$ make figs`
+3. Then just `$ make` to make the whole lot
+4. (Optional) `$ make clean`, `$ make cleanfigs`, or `$make cleanall`

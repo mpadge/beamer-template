@@ -25,11 +25,8 @@ tmux select-pane -t 0
 tmux new-window -t $SESSION:3 -n R
 tmux select-window -t $SESSION:3
 tmux send-keys -t $SESSION:3 'cd ./figures/' C-m
-tmux send-keys -t $SESSION:3 'vim fig1.r' C-m
-tmux send-keys -t $SESSION:3 ':' 'tabe fig2.r' C-m
-tmux send-keys -t $SESSION:3 ':' 'tabe fig3.r' C-m
-tmux send-keys -t $SESSION:3 ':' 'tabe fig4.r' C-m
-tmux send-keys -t $SESSION:3 ':' 'tabe fig5.r' C-m
+tmux send-keys -t $SESSION:3 'vim fig1.R' C-m
+tmux send-keys -t $SESSION:3 ':' 'tabe fig2.R' C-m
 
 tmux select-window -t $SESSION:1
 
