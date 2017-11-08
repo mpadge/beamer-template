@@ -1,0 +1,83 @@
+\include{0header}
+
+\begin{document}
+
+\setcounter{framenumber}{2}
+
+\section[SecTwo]{Autocorrelation}
+
+{\setbeamercolor{background canvas}{bg=gray05} 
+\begin{frame}
+    \begin{center}
+        \begin{pspicture}(0,0)(20,8)
+            \rput[bl](1.5,0){ \includegraphics[height=0.8\paperheight]{./figures/fig1.eps}}
+            \pause
+            \rput[l](3.2,6.8){\color{white}{\large $\Delta H\sim\Delta D^b$}}
+            \pause
+            \psline[linecolor=gray,linewidth=5pt]{->}(1.8,4)(2.8,4)
+            \psline[linecolor=gray80,linewidth=3pt]{->}(1.85,4)(2.7,4)
+            \rput[l](3.0,4){\pscharpath[linewidth=1pt,linecolor=gray,fillstyle=gradient,gradmidpoint=0.5,
+                gradbegin=gray,gradend=white] {\mfd A fancy equation}}
+        \end{pspicture}
+    \end{center}
+\end{frame}
+}
+
+{\setbeamercolor{background canvas}{bg=gray05} 
+\begin{frame}
+    \begin{center}
+        \begin{pspicture}(0,0)(10,7)
+            \rput[c](5,6){\pscharpath[linewidth=1pt,linecolor=gray,fillstyle=gradient,gradmidpoint=0.5,
+                gradbegin=white,gradend=gray] {\mfb Here is a lovely}}
+            \rput[c](5,5){\pscharpath[linewidth=1pt,linecolor=gray,fillstyle=gradient,gradmidpoint=0.5,
+                gradbegin=white,gradend=gray] {\mfb bunch of text}}
+            \rput[c](5,4){\pscharpath[linewidth=1pt,linecolor=gray,fillstyle=gradient,gradmidpoint=0.5,
+                gradbegin=white,gradend=gray] {\mfb which looks}}
+            \rput[c](5,3){\pscharpath[linewidth=1pt,linecolor=gray,fillstyle=gradient,gradmidpoint=0.5,
+                gradbegin=white,gradend=gray] {\mfb quite nice}}
+            \pause
+
+            \rput[l](1,2){\color{white}{And here is some more text}}
+            \rput[l](1,1.5){\color{white}{in the default font}}
+            \rput[l](1,1){\color{white}{which looks kind of okay}}
+            \pause
+
+            \rput[c]{10}(5,3){\pscharpath[linewidth=1pt,linecolor=gray,fillstyle=gradient,gradmidpoint=0.5,
+                                    gradbegin=lightblue,gradend=midblue] {\mfe diagonal}}
+            \pause
+
+            \rput[c]{-10}(5,3){\pscharpath[linewidth=1pt,linecolor=gray,fillstyle=gradient,gradmidpoint=0.5,
+                                    gradbegin=PaleGreen,gradend=ForestGreen] {\mfe the other diagonal}}
+        \end{pspicture}
+    \end{center}
+\end{frame}
+}
+
+{\setbeamercolor{background canvas}{bg=gray05} 
+\begin{frame}
+    \begin{center}
+        \begin{pspicture}(0,0)(20,7)
+            \rput[c](5,6.3){\large \color{white}{$\Delta Y=f(\Delta d)$}}
+            \onslide<1>{
+                \rput[bc](5,3){ \includegraphics[height=0.6\paperheight]{./figures/fig2a.eps}}
+            }
+            \onslide<2>{
+                \rput[bc](5,3){ \includegraphics[height=0.6\paperheight]{./figures/fig2b.eps}}
+            }
+            \onslide<3>{
+                \rput[bc](5,3){ \includegraphics[height=0.6\paperheight]{./figures/fig2c.eps}}
+            }
+            \onslide<4>{
+                \rput[bc](5,3){ \includegraphics[height=0.6\paperheight]{./figures/fig2d.eps}}
+            }
+            \onslide<5->{
+                \rput[bc](5,3){ \includegraphics[height=0.6\paperheight]{./figures/fig2e.eps}}
+                \psline[linecolor=midblue,linewidth=1pt]{-}(6.6,0.1)(6.6,0.0)(7.6,0.0)(7.6,0.1)
+                \rput(7.1,-0.2){\color{midblue}{2}}
+            }
+        \end{pspicture}
+    \end{center}
+\end{frame}
+}
+
+\end{document}

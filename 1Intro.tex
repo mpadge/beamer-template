@@ -1,0 +1,47 @@
+\include{0header}
+
+\begin{document}
+
+\setcounter{framenumber}{0}
+
+\section[Intro]{Introduction}
+
+{\setbeamercolor{background canvas}{bg=gray05} 
+\begin{frame}
+    \begin{center}
+        \begin{pspicture}(0,0)(10,7)
+            \rput[c](5,6){\pscharpath[linewidth=1pt,linecolor=gray,fillstyle=gradient,gradmidpoint=0.5,
+                gradbegin=white,gradend=gray] {\mfd Main Title}}
+            \rput[c](5,4.5){\pscharpath[linewidth=1pt,linecolor=gray,fillstyle=gradient,gradmidpoint=0.5,
+                gradbegin=white,gradend=gray] {\mfd Goes Here}}
+            \rput[c](5,1){\pscharpath[linewidth=1pt,linecolor=gray,fillstyle=gradient,gradmidpoint=0.5,
+                gradbegin=gray,gradend=white] {\mfc My Name}}
+            \pause
+
+            \psline[linewidth=3pt,linecolor=PaleGreen]{-}(6,4)(9,5)
+            \psline[linewidth=3pt,linecolor=PaleGreen]{-}(6,5)(9,4)
+            \rput[c]{-10}(5,3.5){\pscharpath[linewidth=1pt,linecolor=gray,fillstyle=gradient,gradmidpoint=0.5,
+                                    gradbegin=PaleGreen,gradend=ForestGreen] {\mfg Some Big}}
+            \rput[c]{-10}(5,2.0){\pscharpath[linewidth=1pt,linecolor=gray,fillstyle=gradient,gradmidpoint=0.5,
+                                    gradbegin=PaleGreen,gradend=ForestGreen] {\mfg Words}}
+        \end{pspicture}
+    \end{center}
+\end{frame}
+}
+
+{\setbeamercolor{background canvas}{bg=gray05} 
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{./images/Stylish-Ubuntu.eps}}
+\begin{frame}
+    \begin{center}
+        \begin{pspicture}(0,0)(20,7)
+            \onslide<2>{
+                \rput[l]{-20}(2,5){\pscharpath[linewidth=1pt,linecolor=midblue,fillstyle=gradient,gradmidpoint=0.5,
+                    gradbegin=midblue,gradend=lightblue] {\mfh An Image}}
+            }
+        \end{pspicture}
+    \end{center}
+\end{frame}
+}
+
+
+\end{document}

@@ -1,0 +1,160 @@
+\documentclass[final,xcolor=pst,dvips]{beamer}
+%\documentclass[final]{beamer}
+\usepackage{beamerthemeshadow} % items as shadowed circles
+%\usepackage{pstricks,pst-grad,pst-text,pst-char}
+\usepackage{pstricks,pst-text,pst-char,pst-grad,multido}
+\usepackage{pst-node}
+\usepackage{avant} % font
+\usepackage{animate,multirow,rotating}
+\usepackage{tcolorbox,hyperref,setspace}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{amsmath,sfmath,url}
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+\setbeamercolor{background canvas}{bg=black}
+\setbeamercolor{normal text}{fg=white,bg=black!90}
+
+\setbeamertemplate{navigation symbols}{} 
+\definecolor{zhawblue}{HTML}{1166AD}
+\setbeamercolor{leftcolour}{bg=zhawblue,fg=white}
+\setbeamercolor{rightcolour}{bg=gray,fg=black}
+
+\definecolor{lightblue}{RGB}{51,255,255}
+\definecolor{midblue}{RGB}{0,102,204}
+\definecolor{gray05}{gray}{0.05}
+\definecolor{gray10}{gray}{0.1}
+\definecolor{gray20}{gray}{0.2}
+\definecolor{gray50}{gray}{0.5}
+\definecolor{gray80}{gray}{0.8}
+\definecolor{gray90}{gray}{0.9}
+\definecolor{PaleGreen}{RGB}{51,255,51}
+\definecolor{PaleGreenLow}{RGB}{13,64,13}
+\definecolor{ForestGreen}{RGB}{51,102,0}
+\definecolor{BrightOrange}{RGB}{255,127,0}
+\definecolor{BrightOrangeLow}{RGB}{96,48,0}
+\definecolor{MidRed}{RGB}{200,50,0}
+\definecolor{white}{RGB}{255,255,255}
+
+\DeclareFixedFont{\mfa}{T1}{phv}{b}{n}{0.5cm}
+\DeclareFixedFont{\mfb}{T1}{phv}{b}{n}{0.7cm}
+\DeclareFixedFont{\mfc}{T1}{phv}{b}{n}{0.8cm}
+\DeclareFixedFont{\mfd}{T1}{phv}{b}{n}{1.0cm}
+\DeclareFixedFont{\mfe}{T1}{phv}{b}{n}{1.1cm}
+\DeclareFixedFont{\mff}{T1}{phv}{b}{n}{1.2cm}
+\DeclareFixedFont{\mfg}{T1}{phv}{b}{n}{1.3cm}
+\DeclareFixedFont{\mfh}{T1}{phv}{b}{n}{2.0cm}
+
+\setbeamertemplate{headline}
+{
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[wd=0.5\paperwidth,ht=2.25ex,dp=1ex,left]{leftcolour}%
+            \usebeamerfont{subsection in head/foot}\hspace*{2ex}\inserttitle
+        \end{beamercolorbox}\hspace*{0.5pt}}%
+    \hbox{%
+        \begin{beamercolorbox}[wd=0.5\paperwidth,ht=2.25ex,dp=1ex,right,rightskip=1em]{rightcolour}%
+            \usebeamerfont{subsection in head/foot}\hspace*{2ex}today's date\hspace*{2em} 
+            %\insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+        \end{beamercolorbox}}%
+    \vskip0pt%
+}
+\setbeamertemplate{footline}{}
+
+% ******** progressbar in footline ********
+% http://tex.stackexchange.com/questions/59742/progress-bar-for-latex-beamer
+\makeatletter
+\def\progressbar@progressbar{} % the progress bar
+\newcount\progressbar@tmpcounta% auxiliary counter
+\newcount\progressbar@tmpcountb% auxiliary counter
+\newdimen\progressbar@pbht %progressbar height
+\newdimen\progressbar@pbwd %progressbar width
+\newdimen\progressbar@rcircle % radius for the circle
+\newdimen\progressbar@tmpdim % auxiliary dimension
+
+\progressbar@pbwd=\linewidth
+\progressbar@pbht=1pt
+\progressbar@rcircle=2.5pt
+
+% total pages for this version
+\newcounter{totalpages}
+\setcounter{totalpages}{7}
+
+\def\progressbar@progressbar{%
+
+    \progressbar@tmpcounta=\insertframenumber
+    %\progressbar@tmpcountb=\inserttotalframenumber
+    \progressbar@tmpcountb=\arabic{totalpages}
+    \progressbar@tmpdim=\progressbar@pbwd
+    \multiply\progressbar@tmpdim by \progressbar@tmpcounta
+    \divide\progressbar@tmpdim by \progressbar@tmpcountb
+
+    \begin{tikzpicture}
+        \draw[zhawblue!30,line width=\progressbar@pbht]
+        (0pt, 0pt) -- ++ (\progressbar@pbwd,0pt);
+
+        \filldraw[zhawblue!30] %
+            (\the\dimexpr\progressbar@tmpdim-\progressbar@rcircle\relax, .5\progressbar@pbht) circle (\progressbar@rcircle);
+
+        %\node[draw=zhawblue!30,text width=3.5em,align=center,inner sep=1pt,
+        %    text=zhawblue!70,anchor=east] at (0,0) {\insertframenumber/\inserttotalframenumber};
+        %\node[draw=zhawblue!30,text width=3.5em,align=center,inner sep=1pt,
+        %    text=zhawblue!70,anchor=east] at (0,0) {\insertframenumber/\arabic{totalpages}};
+    \end{tikzpicture}%
+}
+
+\addtobeamertemplate{footline}{
+    {%
+      \begin{beamercolorbox}[wd=\paperwidth,ht=4ex,center,dp=1ex]{white}%
+          \progressbar@progressbar%
+        \end{beamercolorbox}%
+    }
+}
+\makeatother
+% ******** end progressbar ********
+
+\newcommand{\ball}{{\usebeamertemplate{itemize item}\hspace{2mm}}}
+
+\usepackage{listings}
+\lstset{ %
+    language=R,                     % the language of the code
+    basicstyle=\scriptsize\tt\color{gray90},      % the size of the fonts that are used for the code
+    numbers=left,                   % where to put the line-numbers
+    numberstyle=\tiny\color{gray},  % the style that is used for the line-numbers
+    stepnumber=1,                   % the step between two line-numbers. If it's 1, each line will be numbered
+    numbersep=5pt,                  % how far the line-numbers are from the code
+    backgroundcolor=\color{gray50}, % choose the background color. You must add \usepackage{color}
+    showspaces=false,               % show spaces adding particular underscores
+    showstringspaces=false,         % underline spaces within strings
+    showtabs=false,                 % show tabs within strings adding particular underscores
+    frame=single,                   % adds a frame around the code
+    rulecolor=\color{black},        % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. commens (green here))
+    tabsize=2,                      % sets default tabsize to 2 spaces
+    captionpos=b,                   % sets the caption-position to bottom
+    breaklines=false,               % sets automatic line breaking
+    breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+    title=\lstname,                 % show the filename of files included with \lstinputlisting; also try caption instead of title
+    keywordstyle=\color{yellow},    % keyword style
+    commentstyle=\color{PaleGreen},   % comment style
+    stringstyle=\color{BrightOrange},    % string literal style
+    escapeinside={\%*}{*)},         % if you want to add a comment within your code
+    morekeywords={*,\ldots},        % if you want to add more keywords to the set
+    %escapeinside=||,
+    alsoletter={_},
+    otherkeywords={!,!=,~,$,*,\&,\%/\%,\%*\%,\%\%,<-,<<-,\%>\%,::,%
+        key,value,bg,border,size,value_exact},
+    moredelim=[is][\yellow]{|}{|}
+}
+
+\lstset{emph={%  
+    opq,add_feature,osmdata_sf,osmdata,get_bbox,osmplotr,osm_basemap,add_osm_objects,getbb,%
+    print_osm_map,extract_osm_objects,adjust_colours,add_axes,add_osm_surface, get_surface_data,%
+    RColorBrewer,brewer,pal,add_colourbar,head%
+    },emphstyle={\color{green}\bfseries}%
+}%
+
+\linespread{1.2}
+
+\title[short title]{this is the title}
+\author[short author]{this is the author}

@@ -1,0 +1,115 @@
+
+\include{0header}
+
+\begin{document}
+
+\setcounter{framenumber}{5}
+
+\section[SecThree]{Thjree}
+
+{\setbeamercolor{background canvas}{bg=gray05} 
+\begin{frame}
+    \begin{center}
+        \begin{pspicture}(0,0)(25,8)
+            \cnode[fillstyle=solid,fillcolor=lightblue,linecolor=midblue,linewidth=1pt](4.0,1.0){3.5pt}{a}
+            \cnode[fillstyle=solid,fillcolor=lightblue,linecolor=midblue,linewidth=1pt](6.5,1.0){3.0pt}{b}
+            \cnode[fillstyle=solid,fillcolor=lightblue,linecolor=midblue,linewidth=1pt](6.0,1.9){3.0pt}{c}
+            \cnode[fillstyle=solid,fillcolor=lightblue,linecolor=midblue,linewidth=1pt](5.0,1.8){3.5pt}{d}
+            \cnode[fillstyle=solid,fillcolor=lightblue,linecolor=midblue,linewidth=1pt](7.6,0.4){3.8pt}{e}
+            \cnode[fillstyle=solid,fillcolor=lightblue,linecolor=midblue,linewidth=1pt](9.5,0.4){3.9pt}{f}
+            \cnode[fillstyle=solid,fillcolor=lightblue,linecolor=midblue,linewidth=1pt](7.2,0.6){3.2pt}{g}
+            \cnode[fillstyle=solid,fillcolor=lightblue,linecolor=midblue,linewidth=1pt](10.3,0.5){3.0pt}{h}
+
+            \psline[fillstyle=solid,fillcolor=lightblue,linecolor=midblue,linewidth=2pt](5,4)(8,4)(8,4.5)(5,4.5)(5,4)(8,4)
+            \pnode(5.5,4){A}
+            \pnode(5.8,4){B}
+            \pnode(6.1,4){C}
+            \pnode(6.4,4){D}
+            \pnode(6.7,4){E}
+            \pnode(7.0,4){F}
+            \pnode(7.3,4){G}
+            \pnode(7.6,4){H}
+
+            \nccurve[linecolor=gray90,angleA=90,angleB=220,nodesep=5pt]{->}{a}{A}
+            \nccurve[linecolor=gray90,angleA=90,angleB=235,nodesep=5pt]{->}{b}{B}
+            \nccurve[linecolor=gray90,angleA=90,angleB=250,nodesep=5pt]{->}{c}{C}
+            \nccurve[linecolor=gray90,angleA=90,angleB=265,nodesep=5pt]{->}{d}{D}
+            \nccurve[linecolor=gray90,angleA=90,angleB=280,nodesep=5pt]{->}{e}{E}
+            \nccurve[linecolor=gray90,angleA=90,angleB=295,nodesep=5pt]{->}{f}{F}
+            \nccurve[linecolor=gray90,angleA=90,angleB=310,nodesep=5pt]{->}{g}{G}
+            \nccurve[linecolor=gray90,angleA=90,angleB=325,nodesep=5pt]{->}{h}{H}
+
+            \rput[l](0.5,4.2){\pscharpath[linewidth=1pt,linecolor=lightblue,fillstyle=gradient,gradmidpoint=0.5,
+                gradbegin=lightblue,gradend=midblue] {\mfb a box}}
+
+            \onslide<1-2>{
+                \rput[l](0.5,1.5){\pscharpath[linewidth=1pt,linecolor=lightblue,fillstyle=gradient,gradmidpoint=0.5,
+                    gradbegin=lightblue,gradend=midblue] {\mfb some points}}
+            }
+            \onslide<3->{
+                \rput[l](0.5,1.5){\pscharpath[linewidth=1pt,linecolor=gray20,fillstyle=gradient,gradmidpoint=0.5,
+                    gradbegin=gray20,gradend=gray10] {\mfb some points}}
+            }
+
+            \onslide<2>{
+                \rput[lt]{20}(3,6.2){\pscharpath[linewidth=1pt,linecolor=lightblue,fillstyle=gradient,gradmidpoint=0.8,
+                    gradbegin=lightblue,gradend=midblue] {\mfb look}}
+                \rput[lb]{-20}(5.9,6.7){\pscharpath[linewidth=1pt,linecolor=lightblue,fillstyle=gradient,gradmidpoint=0.2,
+                    gradbegin=lightblue,gradend=midblue] {\mfb here}}
+            }
+            \onslide<3->{
+                \rput[lt]{20}(3,6.2){\pscharpath[linewidth=1pt,linecolor=gray20,fillstyle=gradient,gradmidpoint=0.8,
+                    gradbegin=gray20,gradend=gray10] {\mfb look}}
+                \rput[lb]{-20}(5.9,6.7){\pscharpath[linewidth=1pt,linecolor=gray20,fillstyle=gradient,gradmidpoint=0.2,
+                    gradbegin=gray20,gradend=gray10] {\mfb here}}
+            }
+            \onslide<2>{
+                \psline[linewidth=5pt,linecolor=midblue]{->}(4.7,6.1)(5.5,4.7)
+                \psline[linewidth=3pt,linecolor=lightblue]{->}(4.73,6.05)(5.45,4.8)
+                \psline[linewidth=5pt,linecolor=midblue]{->}(8.0,5.8)(7.2,4.7)
+                \psline[linewidth=3pt,linecolor=lightblue]{->}(7.96,5.75)(7.27,4.8)
+                \psline[linewidth=1pt,linecolor=lightblue,linestyle=dashed]{-}(4.7,4)(4.7,4.7)(8.3,4.7)(8.3,4)
+            }
+            \onslide<3->{
+                \psline[linewidth=5pt,linecolor=gray20]{->}(4.7,6.1)(5.5,4.7)
+                \psline[linewidth=3pt,linecolor=gray10]{->}(4.73,6.05)(5.45,4.8)
+                \psline[linewidth=5pt,linecolor=gray20]{->}(8.0,5.8)(7.2,4.7)
+                \psline[linewidth=3pt,linecolor=gray10]{->}(7.96,5.75)(7.27,4.8)
+                \psline[linewidth=1pt,linecolor=lightblue,linestyle=dashed]{-}(4.7,4)(4.7,4.7)(8.3,4.7)(8.3,4)
+                \rput[l](4.2,7.0){\pscharpath[linewidth=1pt,linecolor=lightblue,fillstyle=gradient,gradmidpoint=0.2,
+                    gradbegin=lightblue,gradend=midblue] {\mfd Great Stuff!}}
+            }
+            \onslide<4->{
+                \pscurve[linewidth=5pt,linecolor=midblue]{->}(2,1.5)(1.7,2.5)(2.2,3.0)(2,4.1)
+                \pscurve[linewidth=3pt,linecolor=lightblue]{->}(1.97,1.55)(1.7,2.5)(2.2,3.0)(2.05,4.0)
+            }
+            \onslide<5->{
+                \pscurve[linewidth=5pt,linecolor=midblue]{->}(3,4.5)(1.5,4.8)(0,4.3)(1.5,3.8)(3,4.1)
+                \pscurve[linewidth=3pt,linecolor=lightblue]{->}(2.95,4.52)(1.5,4.8)(0,4.3)(1.5,3.8)(2.9,4.07)
+            }
+            \onslide<6->{
+                \pscurve[linewidth=5pt,linecolor=midblue]{->}(0,7.5)(0.7,6.8)(0.2,5.9)(0.5,5)
+                \pscurve[linewidth=3pt,linecolor=lightblue]{->}(0.06,7.47)(0.7,6.8)(0.2,5.9)(0.45,5.1)
+                \pscurve[linewidth=5pt,linecolor=midblue]{->}(3,7.7)(3,7.4)(2.3,6.9)(2.6,6)(2.4,5.0)
+                \pscurve[linewidth=3pt,linecolor=lightblue]{->}(3.02,7.65)(3,7.4)(2.3,6.9)(2.6,6)(2.43,5.1)
+            }
+        \end{pspicture}
+    \end{center}
+\end{frame}
+}
+
+\begin{frame}[fragile,t]{}
+
+    And here is some code:
+
+% NOTE: The || delims are set up to invisibly define yellow, so serve as keywords
+    \begin{lstlisting}
+> for (i in 1:20)
+> {
+>   do_something ("with this")
+> }
+    \end{lstlisting}
+\end{frame}
+
+
+\end{document}
